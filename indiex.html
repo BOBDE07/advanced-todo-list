@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>To-Do List App</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="task.css">
+</head>
+
+<body>
+    <div class="container">
+
+        <!-- Theme Toggle -->
+        <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
+            <span id="themeIcon">🌙</span>
+        </button>
+
+        <!-- Header -->
+        <header class="header">
+            <h1>My Tasks</h1>
+            <p>Stay organized and productive</p>
+        </header>
+
+        <!-- Add Task Form -->
+        <section class="add-task-form">
+            <div class="form-row">
+                <div class="input-group">
+                    <label for="taskInput">Task</label>
+                    <input type="text" id="taskInput" placeholder="What needs to be done?" />
+                </div>
+
+                <div class="input-group">
+                    <label for="dueDateInput">Due Date</label>
+                    <input type="date" id="dueDateInput" />
+                </div>
+
+                <div class="input-group">
+                    <label for="priorityInput">Priority</label>
+                    <select id="priorityInput">
+                        <option value="low">Low</option>
+                        <option value="medium" selected>Medium</option>
+                        <option value="high">High</option>
+                    </select>
+                </div>
+            </div>
+
+            <button class="btn btn-primary" id="addTaskBtn"> Add Task</button>
+            <div class="error-message" id="taskError"></div>
+        </section>
+
+        <!-- Controls -->
+        <section class="controls">
+            <input type="text" id="searchInput" placeholder=" Search tasks..." />
+
+            <div class="filters">
+                <div class="filter-group">
+                    <button class="filter-btn active" data-filter="all">All</button>
+                    <button class="filter-btn" data-filter="active">Active</button>
+                    <button class="filter-btn" data-filter="completed">Completed</button>
+                </div>
+
+                <div class="filter-group">
+                    <button class="filter-btn" data-filter="priority-low">Low</button>
+                    <button class="filter-btn" data-filter="priority-medium">Medium</button>
+                    <button class="filter-btn" data-filter="priority-high">High</button>
+                </div>
+
+                <select id="sortSelect">
+                    <option value="custom">Custom Order</option>
+                    <option value="dateCreated">Date Created</option>
+                    <option value="dueDate">Due Date</option>
+                    <option value="priority">Priority</option>
+                </select>
+            </div>
+        </section>
+
+        <!-- Task List -->
+        <ul class="task-list" id="taskList"></ul>
+
+        <div class="empty-state" id="emptyState">
+            <h3>No tasks yet</h3>
+            <p>Add a task to get started!</p>
+        </div>
+    </div>
+
+    <!-- JavaScript -->
+    <script src="task.js"></script>
+</body>
+
+</html>
